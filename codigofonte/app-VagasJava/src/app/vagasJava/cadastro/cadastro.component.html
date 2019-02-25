@@ -1,0 +1,40 @@
+ <div class="container">
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form (ngSubmit)="salvar()">
+            <h2>{{titulo}}</h2>
+
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input id="username" name="username" pInputText [(ngModel)]="vagasJava.username" placeholder= "usuario do github" class="form-control" type="text">
+        </div>
+
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+          <input id="password" name="password" [(ngModel)]="vagasJava.password" placeholder= "senha do github" class="form-control" pPassword type="password">
+      </div>
+
+        <br>
+
+            <div class="form-group">
+                <label for="title">Titulo da Vaga:</label>
+                <input id="title"  type="text" name="title" [(ngModel)]="vagasJava.title" class="form-control" placeholder="[Cidade, Estado] Desenvolvedor Java | ACME LTDA" autofocus>
+            </div>
+
+            <div class="form-group">
+                Descrição da Vaga:
+                <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" id="body" name="body" class="form-control" [(ngModel)]="vagasJava.body"></textarea>
+
+            </div>
+
+            <div class="form-group">
+                <label for="labels">labels:</label>
+                 <p-chips [(ngModel)]="vagasJava.labels" name="labels" placeholder= "remoto SP PJ CLT"></p-chips>
+            </div>
+
+            <button type="submit" class="{{botao}}">{{acao}}</button>
+
+        </form>
+    </div>
+</div>
+</div>

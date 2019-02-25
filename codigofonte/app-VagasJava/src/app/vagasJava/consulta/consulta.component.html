@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+<p-dataList [value]="vagasJava" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[10,20,30,40,50,100,200]">
+  <p-header>
+    {{titulo}}
+  </p-header>
+  <ng-template let-vagasJava pTemplate="item">
+      <div class="ui-g ui-fluid vagasJava-item">
+          <div class="ui-g-12 ui-md-9 vagasJava-details">
+              <div class="ui-g">
+                  <div class="ui-g-2 ui-sm-6">Login: </div>
+                  <div class="ui-g-10 ui-sm-6">{{vagasJava.user.login}}</div>
+
+                  <div class="ui-g-2 ui-sm-6">Vaga: </div>
+                  <div class="ui-g-10 ui-sm-6">{{vagasJava.title}}</div>
+
+                  <div class="ui-g-2 ui-sm-6">descricao: </div>
+                  <div class="ui-g-10 ui-sm-6">{{vagasJava.body}}</div>
+
+                  <div class="ui-g-2 ui-sm-6">Informações: </div>
+                  <div class="ui-g-10 ui-sm-6" *ngFor=" let item of vagasJava.labels">{{item.name}}</div>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</p-dataList>
+</div>
+</div>
