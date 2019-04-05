@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>
+      Vagas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-list-header>
+      <ion-searchbar
+        [(ngModel)]="pesquisa"
+        (ionChange)="buscar()"
+        (ionClear)="cancelar()"
+        (ionCancel)="limpar()"
+      >
+      </ion-searchbar>
+    </ion-list-header>
+    <ion-item *ngFor="let vaga of vagas" (click)="openVaga(vaga)">
+      <ion-label>{{ vaga.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="openNewVaga()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
