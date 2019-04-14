@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import {Component} from '@angular/core';
 
-import { Platform } from "@ionic/angular";
-import { SplashScreen } from "@ionic-native/splash-screen/ngx";
-import { StatusBar } from "@ionic-native/status-bar/ngx";
-import { MenuService } from "./service/menu.service";
+import {Platform} from '@ionic/angular';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {MenuService} from './service/menu.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "app.component.html"
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
   constructor(
@@ -17,7 +17,7 @@ export class AppComponent {
     public menu: MenuService
   ) {
     this.initializeApp();
-    this.checkLogin();
+    this.menu.menuPrincipal();
   }
 
   initializeApp() {
@@ -25,13 +25,5 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
-
-  checkLogin() {
-    if (localStorage.getItem('sou_java_token')) {
-      this.menu.menuLogado();
-    } else {
-      this.menu.menuNaoLogado();
-    }
   }
 }

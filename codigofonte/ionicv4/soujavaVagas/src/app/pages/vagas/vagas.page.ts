@@ -13,11 +13,11 @@ export class VagasPage implements OnInit {
 
   vagas: Vaga[] = [];
   vagasFilter: Vaga[] = [];
-
+  page = 1;
   pesquisa = '';
 
   ngOnInit() {
-    this.vagaService.getAllVagas().subscribe(result => {
+    this.vagaService.getAllVagasPaginacao(this.page, 100).subscribe(result => {
       this.vagasFilter = result;
       this.vagas = this.vagasFilter;
     });
@@ -27,8 +27,17 @@ export class VagasPage implements OnInit {
     this.router.navigate([`/cadastro-vaga/${vaga.number}`]);
   }
 
+  loadData(event) {
+    this.vagaService.getAllVagasPaginacao(this.page++, 10).subscribe(result => {
+      this.vagasFilter = this.vagasFilter.concat(result);
+      this.vagas = this.vagasFilter;
+      event.target.complete();
+    });
+  }
   buscar() {
-    this.vagas = this.vagasFilter.filter(a => a.title.includes(this.pesquisa));
+    this.vagas = this.vagasFilter.filter(a =>
+      a.title.toLocaleLowerCase().includes(this.pesquisa.toLowerCase())
+    );
   }
 
   cancelar() {
@@ -40,6 +49,15 @@ export class VagasPage implements OnInit {
   }
 
   openNewVaga() {
-    this.router.navigate(['/cadastro-vaga']);
+    window.open('https://github.com/soujava/vagas-java/issues/new', '_blank');
+  }
+
+  getLabels(labels) {
+    if (labels) {
+      let labelMap = labels.map(a => a.name);
+      if (labelMap.length > 0) {
+        return labelMap.reduce(a => a + ', ');
+      }
+    }
   }
 }
