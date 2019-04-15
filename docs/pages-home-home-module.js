@@ -57,7 +57,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class=\"welcome-card\">\n      <ion-card-header>\n        <ion-card-title>Mural de vagas para desenvolvedores Java</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n          <ion-row>\n              <ion-col col-12>\n                  <ion-img src=\"/assets/soujava.png\" style=\" width: 100%; height: 100%;\"></ion-img>\n                </ion-col>\n            </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class=\"welcome-card\">\n      <ion-card-header>\n        <ion-card-title>Mural de vagas para Desenvolvedores Java</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n          <ion-row>\n              <ion-col col-12>\n                  <ion-img src=\"./assets/soujava.png\" style=\" width: 100%; height: 100%;\"></ion-img>\n                </ion-col>\n            </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-content>\n"
 
 /***/ }),
 
