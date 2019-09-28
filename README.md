@@ -1,11 +1,13 @@
-# appVagasJava
-Simples pagina para adicionar vagas atraves de issues .
+# AppVagasJava
+App que lista vagas cadastradas como issues desse [repositório](https://github.com/soujava/vagas-java/issues/), podendo elas serem listadas e filtradas.
 
-Pasta docs contem o site.
 
 ![Principal](img/tela.png)
 ------------------------------------------------------------
-![cadastro](img/cad.png)
-------------------------------------------------------------
 ![Listagem](img/lista.png)
 ------------------------------------------------------------
+
+## Contribuição
+
+- Como posso contribuir?
+    - Qualquer detalhe que você enxergue na aplicação e possa fazer melhorias é bem vindo
